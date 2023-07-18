@@ -1,0 +1,239 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+
+  font-family: Inter;
+}
+.grid-container {
+  height: calc(100% - 130px);
+  overflow: auto;
+
+  margin: 0px 200px;
+  color: white;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(50px);
+  display: none;
+}
+.results {
+  z-index: 10;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-top: 50px;
+  box-sizing: border-box;
+  text-align: center;
+
+  > .result-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(50px);
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+}
+.cell {
+  flex-basis: 12.5%;
+  border: 1px solid black;
+  transition: background-color 0.5s;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 12px 0px;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.cell.active {
+  background-color: white;
+  color: black;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  background-image: url("img/bg.png");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  height: 130px;
+  text-align: center;
+
+  > img {
+    max-width: 80%;
+    height: 100%;
+  }
+}
+
+.buttons {
+  position: absolute;
+  right: 30px;
+  top: 48%;
+
+  > button {
+    background-color: #4f6ac7;
+    border-radius: 12px;
+    padding: 32px 24px 32px 24px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+#stopButton {
+  /* display: none; */
+}
+
+.result-header {
+  color: #fff;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 5.6px;
+  text-transform: uppercase;
+  border-radius: 12px 12px 0px 0px;
+  border: 3px solid rgba(174, 177, 230, 0.15);
+  background: #586487;
+  mix-blend-mode: lighten;
+  box-shadow: 0px 4px 4px 0px rgba(161, 165, 229, 0.25),
+    0px 4px 4px 0px rgba(161, 165, 229, 0.25),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(50px);
+  width: auto;
+  display: inline-block;
+  padding: 24px 60px;
+  margin-top: -48px;
+  position: relative;
+  z-index: 11;
+}
+
+.gift {
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  padding: 40px 0px;
+}
+
+.congrat {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 40px;
+  text-shadow: 0px 4px 25px #b0c2e3;
+  padding-top: 50px;
+}
+
+.congrat::after {
+  content: url("img/line.svg");
+}
+
+.winner-info {
+  > div:first-child {
+    padding: 45px 0px 25px;
+    color: #fff;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+  }
+  > div:nth-child(2) {
+    color: #fff;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+  }
+}
+
+table {
+  width: 100%;
+  height: 80%;
+  padding: 100px 20px 10px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+th {
+  font-size: 30px;
+  width: 33.33%;
+}
+
+td:last-child {
+  /* text-align: right; */
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+tr:not(:last-child) th,
+tr:not(:last-child) td {
+  border-bottom: 1px solid rgba(174, 177, 230, 0.15);
+}
+tr td:first-child{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+td:nth-child(2) div div:first-child{
+        font-size: 30px;
+    padding-bottom: 10px;
+    min-width: 385px;
+}
+
+td:nth-child(2) div div:nth-child(2){
+        font-size: 22px;
+}
